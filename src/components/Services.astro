@@ -1,0 +1,37 @@
+---
+import Container from "@components/Container.astro"
+
+const services = [
+  {
+    title: 'Bathroom plumbing',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
+    imageSrc: '/pipe.png'
+  },
+  {
+    title: 'Bathroom plumbing',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
+    imageSrc: '/pipe.png'
+  },
+  {
+    title: 'Bathroom plumbing',
+    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
+    imageSrc: '/pipe.png'
+  }
+]
+---
+<section class="py-5">
+  <Container>
+    <h2 class="text-4xl font-semibold text-center">Services</h2>
+    <p class="my-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro laborum ab corrupti architecto illo ad quo harum perspiciatis excepturi, dignissimos, soluta commodi. Quasi cumque autem dolore, doloribus vel aspernatur veritatis.</p>
+
+    {services.map((service) => (
+      <div class="bg-gray-100 flex flex-col sm:items-center p-5 my-10 sm:flex-row gap-5">
+        <img src="/pipe.png" alt="pipe" class="max-w-[10rem]">
+        <div>
+          <h3 class="text-3xl font-semibold mb-2">Bathroom plumbing</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!</p>
+        </div>
+      </div>
+    ))}
+  </Container>
+</section>
