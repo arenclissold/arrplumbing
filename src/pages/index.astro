@@ -2,6 +2,7 @@
 import Layout from '@layouts/Layout.astro'
 import Hero from '@components/Hero.astro'
 import Services from '@components/Services.astro'
+import Form from '@components/Form'
 import Reviews from '@components/Reviews.astro'
 ---
 
@@ -10,6 +11,7 @@ import Reviews from '@components/Reviews.astro'
     <Hero />
     <div class="max-w-[1440px] mx-auto px-4 md:px-6 lg:px-12 xl:px-[156px] py-5">
       <Services />
+      <Form client:visible />
       <Reviews />
     </div>
 	</main>
