@@ -1,0 +1,40 @@
+---
+import Icon from './Icon'
+
+const reviews = [
+  {
+    name: 'Canex Graphic Designs',
+    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
+    star: Array(5)
+  },
+  {
+    name: 'Canex Graphic Designs',
+    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
+    star: Array(5)
+  },
+  {
+    name: 'Canex Graphic Designs',
+    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
+    star: Array(5)
+  }
+]
+---
+
+<section class="grid grid-cols-3 gap-5 py-10">
+  {
+    reviews.map((review) => (
+      <div class="relative">
+        <Icon icon="quote" className="absolute text-gray-300 h-10 w-10 left-[-2.5rem] top-[-0.7rem] z-[-1]"/>
+        <h4 class="font-bold">{review.name}</h4>
+        <p class="my-2">{review.body}</p>
+        <div class="flex">
+          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
+          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
+          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
+          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
+          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
+        </div>
+      </div>
+    ))
+  }
+</section>
