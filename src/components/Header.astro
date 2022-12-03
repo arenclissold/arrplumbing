@@ -7,12 +7,15 @@ const email = 'aarplumb@icloud.com'
 <div
   class="fixed z-10 flex w-full items-center justify-between bg-white py-3 px-3 shadow-[0_5px_5px_0px_rgba(0,0,0,0.1)]"
 >
-  <a href="#" class="font-serif text-4xl font-extrabold text-blue-700">
+  <a
+    href="#"
+    class="font-serif text-xl font-extrabold text-blue-700 sm:text-4xl"
+  >
     AAR Plumbing
   </a>
   <a
     href={`mailto:${email}`}
-    class="flex items-center rounded-3xl bg-pink-600 py-2 px-4 text-xl font-semibold text-white transition-all duration-200 hover:bg-pink-500"
+    class="flex items-center rounded-3xl bg-pink-600 py-2 px-4 text-lg font-semibold text-white transition-all duration-200 hover:bg-pink-500 sm:text-xl"
   >
     <Icon icon="phone" className="inline-block scale-150 mr-2" />
     {phoneNumber}
