@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import emailjs from '@emailjs/browser'
+import Turnstile from './Turnstile'
 
 interface Values {
   name: string
@@ -10,13 +13,22 @@ interface Values {
 }
 
 const FormComponent = () => {
+  const [turnstile, setTurnstile] = useState('')
+
   const handleSubmit = (values: Values) => {
-    console.log(JSON.stringify(values))
-    fetch('/form', {
-      method: 'POST',
-      body: JSON.stringify(values)
-    }).then((res) => {
-      console.log(res.json())
+    // fetch('/turnstile', {
+    //   method: 'POST',
+    //   body: JSON.stringify(turnstile)
+    // }).then((res) => {
+    //   const result = res.json()
+    //   console.log(result)
+    // })
+
+    emailjs.send('service_irdgb5n', 'template_kpr5u5v', values, 'LZiH3VzIaIxXMV0yW')
+    .then((result) => {
+        console.log(result.text)
+    }, (error) => {
+        console.log(error.text)
     })
   }
 
@@ -42,6 +54,7 @@ const FormComponent = () => {
       enableReinitialize
     >
       <Form className="flex flex-col bg-gray-100 p-5">
+        <Turnstile callback={(token) => setTurnstile(token)} />
         <div className="mb-8 grid grid-cols-2 gap-8">
           {['name', 'email', 'phone', 'town'].map((name) => (
             <div key={name} className="relative">
