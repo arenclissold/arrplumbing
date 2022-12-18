@@ -1,33 +1,56 @@
 ---
 const services = [
   {
-    title: 'Bathroom plumbing',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
-    imageSrc: '/images/pipe.png'
+    title: 'General plumbing',
+    description:
+      'Are you tired of dealing with leaky or faulty taps? Do you want to upgrade to stylish and modern fixtures? Look no further! I offer professional tap repair and replacement services.',
+    imageSrc: '/images/services/taps.jpg'
   },
   {
-    title: 'Bathroom plumbing',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
-    imageSrc: '/images/pipe.png'
+    title: 'Hot Water Service Replacement',
+    description:
+      'Need a new hot water system? I can help! I offer expert hot water replacement services. Contact me for a free quote.',
+    imageSrc: '/images/services/hot-water-service.jpg'
   },
   {
-    title: 'Bathroom plumbing',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!',
-    imageSrc: '/images/pipe.png'
-  }
+    title: 'Blocked Drains',
+    description:
+      "Is your drain clogged and causing water to back up? Don't suffer any longer! We offer fast and effective drain unblocking services.",
+    imageSrc: '/images/services/drain-cleaner.jpg'
+  },
+  {
+    title: 'Gas Safety Check',
+    description:
+      "Are you a landlord needing a gas safety check on a rental property? Or seeking to service your gas appliances? Look no further, I'm licensed to perform these services and offer a competative price.",
+    imageSrc: '/images/services/gas-heater.jpg'
+  },
+  {
+    title: 'Commercial Maintenance',
+    description:
+      "I have a number of commercial clients and create tailored routine maintenance schedules for restaurants and hospitality businesses, schools buildings etc. These ensure that I am preventing plumbing problems instead of just fixing them.",
+    imageSrc: '/images/services/cafe.jpg'
+  },
+  {
+    title: 'Gas Service',
+    description:
+      "Need a gas appliance repair? I'm a licensed technician that can help. I offer fast, reliable services at competitive prices. Contact me today to schedule an appointment and get your appliances running smoothly again.",
+    imageSrc: '/images/services/gas-meter.jpg'
+  },
 ]
 ---
-<section class="py-5">
-  <h2 class="text-4xl font-semibold text-center">Services</h2>
-  <p class="my-2 text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro laborum ab corrupti architecto illo ad quo harum perspiciatis excepturi, dignissimos, soluta commodi. Quasi cumque autem dolore, doloribus vel aspernatur veritatis.</p>
 
-  {services.map((service) => (
-    <div class="bg-gray-100 flex flex-col sm:items-center p-5 my-10 sm:flex-row gap-5">
-      <img src="/images/pipe.png" alt="pipe" class="max-w-[10rem]">
-      <div>
-        <h3 class="text-3xl font-semibold mb-2">Bathroom plumbing</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, neque reprehenderit? Tempore voluptates maiores totam cum officiis illum sapiente molestias veniam ipsum deserunt corporis, beatae voluptas id, placeat impedit magnam!</p>
+<section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
+  {
+    services.map((service) => (
+      <div
+        class="flex items-center justify-center p-6 h-screen bg-cover bg-center bg-no-repeat"
+        style={`background-image: url('${service.imageSrc}');`}
+      >
+        <div class="text-center bg-white py-6 p-3 rounded shadow">
+          <h3 class="mb-2 text-3xl font-semibold uppercase">{service.title}</h3>
+          <p class="">{service.description}</p>
+        </div>
       </div>
-    </div>
-  ))}
+    ))
+  }
 </section>
