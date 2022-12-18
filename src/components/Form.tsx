@@ -63,7 +63,7 @@ const FormComponent = () => {
       >
         <Form className="flex flex-col bg-gray-100 p-5">
           <Turnstile callback={(token) => setTurnstile(token)} />
-          <div className="mb-8 grid grid-cols-2 gap-8">
+          <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-8">
             {['name', 'email', 'phone', 'town'].map((name) => (
               <div key={name} className="relative">
                 <Field
