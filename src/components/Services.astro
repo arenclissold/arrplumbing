@@ -15,19 +15,19 @@ const services = [
   {
     title: 'Blocked Drains',
     description:
-      "Is your drain clogged and causing water to back up? Don't suffer any longer! We offer fast and effective drain unblocking services.",
+      "Is your drain clogged and causing water to back up? Don't suffer any longer! We offer fast and effective drain unblocking.",
     imageSrc: '/images/services/drain-cleaner.jpg'
   },
   {
     title: 'Gas Safety Check',
     description:
-      "Are you a landlord needing a gas safety check on a rental property? Or seeking to service your gas appliances? Look no further, I'm licensed to perform these services and offer a competative price.",
+      "Are you a landlord needing a gas safety check on a rental property? Or seeking to service your gas appliances? Look no further, I'm licensed to perform these services and offer competetive prices.",
     imageSrc: '/images/services/gas-heater.jpg'
   },
   {
     title: 'Commercial Maintenance',
     description:
-      "I have a number of commercial clients and create tailored routine maintenance schedules for restaurants and hospitality businesses, schools buildings etc. These ensure that I am preventing plumbing problems instead of just fixing them.",
+      'I have a number of commercial clients and create tailored routine maintenance schedules for restaurants, businesses and school buildings. These ensure that I am preventing plumbing problems instead of just fixing them.',
     imageSrc: '/images/services/cafe.jpg'
   },
   {
@@ -35,7 +35,7 @@ const services = [
     description:
       "Need a gas appliance repair? I'm a licensed technician that can help. I offer fast, reliable services at competitive prices. Contact me today to schedule an appointment and get your appliances running smoothly again.",
     imageSrc: '/images/services/gas-meter.jpg'
-  },
+  }
 ]
 ---
 
@@ -43,10 +43,10 @@ const services = [
   {
     services.map((service) => (
       <div
-        class="flex items-center justify-center p-6 h-[50vh] min-h-[24rem] bg-cover bg-center bg-no-repeat"
+        class="flex h-[50vh] min-h-[24rem] items-center justify-center bg-cover bg-center bg-no-repeat p-6"
         style={`background-image: url('${service.imageSrc}');`}
       >
-        <div class="text-center bg-white py-6 p-3 rounded shadow">
+        <div class="rounded bg-white p-3 py-6 text-center shadow">
           <h3 class="mb-2 text-3xl font-semibold uppercase">{service.title}</h3>
           <p class="">{service.description}</p>
         </div>
