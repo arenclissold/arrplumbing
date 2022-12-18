@@ -1,40 +1,33 @@
 ---
 import Icon from './Icon'
 
-const reviews = [
-  {
-    name: 'Canex Graphic Designs',
-    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
-    star: Array(5)
-  },
-  {
-    name: 'Canex Graphic Designs',
-    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
-    star: Array(5)
-  },
-  {
-    name: 'Canex Graphic Designs',
-    body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
-    star: Array(5)
-  }
-]
+const review = {
+  name: 'Canex Graphic Designs',
+  body: 'Rhett is by far the best plumber around! Recommended to us by the real estate we bought our house through - definitely glad we had asked them! Great prices, very quick and extremely helpful for people who may not know the ins and outs of plumbing!',
+  star: Array(5)
+}
 ---
 
-<section class="grid grid-cols-3 gap-5 py-10">
+<section class="flex justify-center p-10 bg-cyan-100">
   {
-    reviews.map((review) => (
-      <div class="relative">
-        <Icon icon="quote" className="absolute text-gray-300 h-10 w-10 left-[-2.5rem] top-[-0.7rem] z-[-1]"/>
-        <h4 class="font-bold">{review.name}</h4>
-        <p class="my-2">{review.body}</p>
-        <div class="flex">
-          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
-          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
-          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
-          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
-          <Icon icon="star" className="h-8 w-8 text-yellow-500" />
-        </div>
+    <div class="relative max-w-xl text-sky-700 pl-2">
+      <Icon
+        icon="quote"
+        className="absolute left-[-2.5rem] top-[-1.5rem] h-10 w-10"
+      />
+      <Icon
+        icon="quote"
+        className="absolute right-[-1.5rem] bottom-[-0.5rem] h-10 w-10 rotate-180"
+      />
+      <h4 class="font-bold">{review.name}</h4>
+      <p class="my-2">{review.body}</p>
+      <div class="flex ml-[-0.5rem]">
+        <Icon icon="star" className="h-8 w-8" />
+        <Icon icon="star" className="h-8 w-8" />
+        <Icon icon="star" className="h-8 w-8" />
+        <Icon icon="star" className="h-8 w-8" />
+        <Icon icon="star" className="h-8 w-8" />
       </div>
-    ))
+    </div>
   }
 </section>
