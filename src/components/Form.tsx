@@ -37,7 +37,7 @@ const FormComponent = () => {
   }
 
   return (
-    <section id="form" className="mx-auto max-w-[1440px] px-4 py-10 md:px-6 lg:px-12 xl:px-[156px] scroll-mt-[68px]">
+    <section id="form" className="mx-auto max-w-[1440px] px-4 py-10 md:px-6 lg:px-12 xl:px-[156px] scroll-mt-[68px] bg-white">
       <h2 className="text-center text-3xl mb-4">REQUEST A FREE QUOTE</h2>
       <Formik
         initialValues={{
