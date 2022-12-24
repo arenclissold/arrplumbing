@@ -1,4 +1,5 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
+
 
 interface Props {
   action?: string
@@ -6,6 +7,7 @@ interface Props {
   callback?: (token: string) => void
   'error-callback'?: () => void
   'expired-callback'?: () => void
+  'timeout-callback'?: () => void
   theme?: 'light' | 'dark' | 'auto'
   tabindex?: number
   size?: 'normal' | 'invisible' | 'compact'
@@ -37,6 +39,8 @@ declare global {
 }
 
 const Turnstile = (props: Props) => {
+  const intervalRef = useRef<ReturnType<typeof setTimeout>>(null)
+
   useEffect(() => {
     const script = document.createElement('script')
     script.src =
@@ -48,16 +52,22 @@ const Turnstile = (props: Props) => {
     const sitekey = import.meta.env.PUBLIC_TURNSTILE_SITEKEY
 
     window.onLoadTurnstileCallback = () => {
-      window.turnstile.render('#turnstile-container', {
+      const turnstileId = window.turnstile.render('#turnstile-container', {
         sitekey: sitekey,
-        'expired-callback': () => {
-          window.turnstile.reset()
-        },
         ...props
       })
+
+      // reset widget every 90 seconds
+      intervalRef.current = setInterval(() => {
+        window.turnstile.reset(turnstileId)
+      }, 90000)
     }
 
-    return () => document.body.removeChild(script)
+
+    return () => {
+      clearInterval(intervalRef.current)
+      document.body.removeChild(script)
+    }
   }, [])
 
   return <div id="turnstile-container" />
