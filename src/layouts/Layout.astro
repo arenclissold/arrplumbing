@@ -3,24 +3,65 @@ import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 
 export interface Props {
-	title: string
+  title: string
 }
 
 const { title } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en" class="bg-white scroll-smooth">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
+<html lang="en" class="scroll-smooth bg-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta
+      name="keywords"
+      content="Morwell, Traralgon, plumber, gas plumber, gas, leak, Churchill, Latrobe valley"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="English" />
+
+    <!-- Primary Meta Tags -->
+    <title>AAR Plumbing</title>
+    <meta name="title" content="AAR Plumbing" />
+    <meta
+      name="description"
+      content="Local Plumber Rhett serving Morwell and the surrounding area, with over 30 years of experience in the industry, with top-quality service."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://metatags.io/" />
+    <meta property="og:title" content="AAR Plumbing" />
+    <meta
+      property="og:description"
+      content="Local Plumber Rhett serving Morwell and the surrounding area, with over 30 years of experience in the industry, with top-quality service."
+    />
+    <meta
+      property="og:image"
+      content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://metatags.io/" />
+    <meta property="twitter:title" content="AAR Plumbing" />
+    <meta
+      property="twitter:description"
+      content="Local Plumber Rhett serving Morwell and the surrounding area, with over 30 years of experience in the industry, with top-quality service."
+    />
+    <meta
+      property="twitter:image"
+      content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png"
+    />
+  </head>
+  <body>
     <Header />
-		<slot />
+    <slot />
     <Footer />
-	</body>
+  </body>
 </html>
